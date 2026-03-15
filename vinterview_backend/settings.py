@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n$yl!o_@oc*^mer(7z=!4qc9hlp(uyr8&e9+0@&0y-e9z1*a$n'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,11 +89,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vinterview_db',           # Your database name
-        'USER': 'postgres',             # Your username
-        'PASSWORD': 'aqw123456', # Your password
-        'HOST': 'localhost',             # Usually localhost
-        'PORT': '5432',                  # Default PostgreSQL port
+        'NAME': config('DB_NAME'),           # Your database name
+        'USER': config('DB_USER'),             # Your username
+        'PASSWORD': config('DB_PASSWORD'), # Your password
+        'HOST': config('DB_HOST'),             # Usually localhost
+        'PORT': config('DB_PORT'),                  # Default PostgreSQL port
     }
 }
 
